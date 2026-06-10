@@ -1,28 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+const loginForm = document.getElementById("loginForm");
 
-<div class="container">
+if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
 
-    <h2>Login</h2>
+        e.preventDefault();
 
-    <form id="loginForm">
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
 
-        <input type="email" id="loginEmail" placeholder="Email" required>
+        const storedEmail = localStorage.getItem("email");
+        const storedPassword = localStorage.getItem("password");
 
-        <input type="password" id="loginPassword" placeholder="Password" required>
+        alert("Entered Email: " + email);
+        alert("Stored Email: " + storedEmail);
 
-        <button type="submit">Login</button>
+        if (email === storedEmail && password === storedPassword) {
 
-    </form>
+            alert("Login Successful");
 
-</div>
+            window.location.href = "quiz.html";
 
-<script src="script.js"></script>
+        } else {
 
-</body>
-</html>
+            alert("Invalid Login");
+
+        }
+    });
+}
