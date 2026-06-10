@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>
+
+        Welcome,
+
+        <span id="username"></span>
+
+    </h1>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+
+            <h2>
+
+                Start Quiz
+
+            </h2>
+
+            <p>
+
+                Begin your assessment
+
+            </p>
+
+            <a href="quiz.html">
+
+                <button>
+
+                    Start
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>
+
+                Leaderboard
+
+            </h2>
+
+            <p>
+
+                View top scores
+
+            </p>
+
+            <a href="leaderboard.html">
+
+                <button>
+
+                    View
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2>
+
+                Logout
+
+            </h2>
+
+            <p>
+
+                End current session
+
+            </p>
+
+            <button
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const user =
+sessionStorage.getItem(
+"loggedInUser"
+);
+
+document.getElementById(
+"username"
+).innerHTML = user;
+
+function logout(){
+
+sessionStorage.clear();
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
