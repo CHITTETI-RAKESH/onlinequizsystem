@@ -1,92 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Quiz Exam</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="quiz-container">
 
-    <h2>Online Quiz</h2>
+    <div class="quiz-header">
 
-    <form id="quizForm">
+        <h1>Online Quiz Exam</h1>
 
-        <div class="question">
+        <div id="timer">
+            60
+        </div>
 
-            <p>1. What does HTML stand for?</p>
+    </div>
 
-            <input type="radio" name="q1" value="a">
-            Hyper Text Markup Language
-            <br>
+    <div class="progress-container">
 
-            <input type="radio" name="q1" value="b">
-            High Text Machine Language
-            <br>
+        <div id="progress-bar"></div>
 
-            <input type="radio" name="q1" value="c">
-            Hyper Transfer Language
-            <br>
+    </div>
 
-            <input type="radio" name="q1" value="d">
-            None
-            <br>
+    <div class="question-box">
+
+        <h2 id="question"></h2>
+
+        <div id="options">
 
         </div>
 
-        <div class="question">
+    </div>
 
-            <p>2. Which language is used for styling?</p>
+    <div class="buttons">
 
-            <input type="radio" name="q2" value="a">
-            Java
-            <br>
+        <button id="prevBtn">
 
-            <input type="radio" name="q2" value="b">
-            CSS
-            <br>
+            Previous
 
-            <input type="radio" name="q2" value="c">
-            Python
-            <br>
-
-            <input type="radio" name="q2" value="d">
-            C
-            <br>
-
-        </div>
-
-        <div class="question">
-
-            <p>3. Which language runs in browser?</p>
-
-            <input type="radio" name="q3" value="a">
-            JavaScript
-            <br>
-
-            <input type="radio" name="q3" value="b">
-            Java
-            <br>
-
-            <input type="radio" name="q3" value="c">
-            Python
-            <br>
-
-            <input type="radio" name="q3" value="d">
-            C++
-            <br>
-
-        </div>
-
-        <button type="submit">
-            Submit Quiz
         </button>
 
-    </form>
+        <button id="nextBtn">
+
+            Next
+
+        </button>
+
+        <button id="submitBtn">
+
+            Submit Quiz
+
+        </button>
+
+    </div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="js/quiz.js"></script>
 
 </body>
+
 </html>
