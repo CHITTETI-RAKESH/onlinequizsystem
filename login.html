@@ -1,29 +1,105 @@
-const loginForm = document.getElementById("loginForm");
+<!DOCTYPE html>
+<html lang="en">
 
-if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
+<head>
 
-        e.preventDefault();
+    <meta charset="UTF-8">
 
-        const email = document.getElementById("loginEmail").value;
-        const password = document.getElementById("loginPassword").value;
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        const storedEmail = localStorage.getItem("email");
-        const storedPassword = localStorage.getItem("password");
+    <title>Login</title>
 
-        alert("Entered Email: " + email);
-        alert("Stored Email: " + storedEmail);
+    <link rel="stylesheet"
+          href="css/style.css">
 
-        if (email === storedEmail && password === storedPassword) {
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-            alert("Login Successful");
+</head>
 
-            window.location.href = "quiz.html";
+<body>
 
-        } else {
+    <div class="form-container">
 
-            alert("Invalid Login");
+        <div class="form-card">
 
-        }
-    });
-}
+            <h1>Welcome Back</h1>
+
+            <p>
+                Login to continue your quiz journey
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <i class="fa fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter Email"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter Password"
+                        required>
+
+                </div>
+
+                <div class="options">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="showPassword">
+
+                        Show Password
+
+                    </label>
+
+                </div>
+
+                <div id="loginMessage"></div>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <div class="form-footer">
+
+                Don't have an account?
+
+                <a href="register.html">
+
+                    Register Here
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
