@@ -62,3 +62,85 @@ window.location.href =
 });
 
 }
+
+
+/* ==========================
+   LOGIN
+========================== */
+
+const loginForm =
+document.getElementById("loginForm");
+
+if(loginForm){
+
+const showPassword =
+document.getElementById("showPassword");
+
+showPassword.addEventListener("change",()=>{
+
+const passwordField =
+document.getElementById("loginPassword");
+
+passwordField.type =
+showPassword.checked
+? "text"
+: "password";
+
+});
+
+loginForm.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const email =
+document.getElementById("loginEmail").value;
+
+const password =
+document.getElementById("loginPassword").value;
+
+const loginMessage =
+document.getElementById("loginMessage");
+
+const storedUser =
+JSON.parse(
+localStorage.getItem("user")
+);
+
+if(
+storedUser &&
+storedUser.email === email &&
+storedUser.password === password
+){
+
+sessionStorage.setItem(
+"loggedInUser",
+storedUser.fullname
+);
+
+loginMessage.innerHTML =
+"Login Successful";
+
+loginMessage.style.color =
+"green";
+
+setTimeout(()=>{
+
+window.location.href =
+"dashboard.html";
+
+},1000);
+
+}
+else{
+
+loginMessage.innerHTML =
+"Invalid Email or Password";
+
+loginMessage.style.color =
+"red";
+
+}
+
+});
+
+}
