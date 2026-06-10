@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+const registerForm = document.getElementById("registerForm");
 
-<div class="container">
+if (registerForm) {
+    registerForm.addEventListener("submit", function(e) {
 
-    <h2>User Registration</h2>
+        e.preventDefault();
 
-    <form id="registerForm">
+        localStorage.setItem(
+            "email",
+            document.getElementById("email").value
+        );
 
-        <input type="text" id="name" placeholder="Enter Name" required>
+        localStorage.setItem(
+            "password",
+            document.getElementById("password").value
+        );
 
-        <input type="email" id="email" placeholder="Enter Email" required>
+        alert("Saved!");
 
-        <input type="password" id="password" placeholder="Enter Password" required>
+        console.log(localStorage.getItem("email"));
 
-        <button type="submit">Register</button>
-
-    </form>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+        window.location.href = "login.html";
+    });
+}
